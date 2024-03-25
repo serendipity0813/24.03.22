@@ -15,7 +15,6 @@ public class PlayerInputController : CharacterActionController
     {
         Vector2 moveInput = value.Get<Vector2>().normalized;
         CallMoveEvent(moveInput);
-        Debug.Log("2");
     }
 
     public void OnLook(InputValue value)

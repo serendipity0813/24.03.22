@@ -13,7 +13,6 @@ public class CharacterActionController : MonoBehaviour
     {
         //direction의 값이 NULL인지 체크한 후 OnMoveEvent 실행
         OnMoveEvent?.Invoke(direction);
-        Debug.Log("1");
     }
 
     public void CallLookEvent(Vector2 direction)

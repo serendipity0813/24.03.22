@@ -29,7 +29,6 @@ public class CharacterMovement : MonoBehaviour
     private void Move(Vector2 direction)
     {
         _moveDirection = direction;
-        Debug.Log("3");
     }
 
     private void ApplyMovement(Vector2 direction)
