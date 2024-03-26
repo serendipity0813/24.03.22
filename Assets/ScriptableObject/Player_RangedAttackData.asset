@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7fe130d3549894499079d906514516f, type: 3}
   m_Name: Player_RangedAttackData
   m_EditorClassIdentifier: 
-  bulletNameTag: 
-  duration: 0
-  spread: 0
-  numberOfBulletPerShot: 0
-  multipleBulletAngle: 0
-  BulletColor: {r: 0, g: 0, b: 0, a: 0}
+  size: 1
+  delay: 0.15
+  power: 2
+  speed: 10
+  target:
+    serializedVersion: 2
+    m_Bits: 0
+  IsOnKnockback: 1
+  KnockbackPower: 5
+  KnockbackTime: 0.01
+  bulletNameTag: Blast
+  duration: 5
+  spread: 4
+  numberOfBulletPerShot: 1
+  multipleBulletAngle: 7
+  BulletColor: {r: 1, g: 1, b: 1, a: 0}
