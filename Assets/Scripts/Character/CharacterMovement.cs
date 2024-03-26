@@ -6,14 +6,14 @@ using UnityEngine.InputSystem;
 public class CharacterMovement : MonoBehaviour
 {
     private CharacterActionController _characterController;
-    private CharactetStatsHandler _stats;
+    private CharacterStatsHandler _stats;
     private Vector2 _moveDirection = Vector2.zero;
     private Rigidbody2D _rigidbody;
 
     private void Awake()
     {
         _characterController = GetComponent<CharacterActionController>();
-        _stats = GetComponent<CharactetStatsHandler>(); 
+        _stats = GetComponent<CharacterStatsHandler>(); 
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 

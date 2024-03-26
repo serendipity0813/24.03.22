@@ -6,6 +6,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     private CharacterActionController _controller;
+    private BulletManager _bulletManager;
 
     [SerializeField] private Transform bulletSpawnPosition;
     private Vector2 _aimDirection = Vector2.right;

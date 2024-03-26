@@ -9,7 +9,7 @@ public class CharacterActionController : MonoBehaviour
 
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
-    public event Action OnAttackEvent;
+    public event Action<AttackSO> OnAttackEvent;
 
     private float _timeSinceLastAttack; 
     protected bool IsAttacking { get; set; }
@@ -35,7 +35,7 @@ public class CharacterActionController : MonoBehaviour
         }
         else if(IsAttacking && _timeSinceLastAttack > stats.CurrentStates.attackSO.delay)
         {
-            CallAttackEvent();
+            CallAttackEvent(stats.CurrentStates.attackSO);
             _timeSinceLastAttack = 0;
         }
     }
@@ -51,8 +51,8 @@ public class CharacterActionController : MonoBehaviour
         OnLookEvent?.Invoke(direction);
     }
 
-    public void CallAttackEvent()
+    public void CallAttackEvent(AttackSO attackSO)
     {
-        OnAttackEvent?.Invoke();
+        OnAttackEvent?.Invoke(attackSO);
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 
-public class CharactetStatsHandler : MonoBehaviour
+public class CharacterStatsHandler : MonoBehaviour
 {
     [SerializeField] private CharacterStats baseStats;
     public CharacterStats CurrentStates { get; private set; }

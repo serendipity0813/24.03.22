@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7fe130d3549894499079d906514516f, type: 3}
+  m_Name: Player_RangedAttackData
+  m_EditorClassIdentifier: 
+  bulletNameTag: 
+  duration: 0
+  spread: 0
+  numberOfBulletPerShot: 0
+  multipleBulletAngle: 0
+  BulletColor: {r: 0, g: 0, b: 0, a: 0}
