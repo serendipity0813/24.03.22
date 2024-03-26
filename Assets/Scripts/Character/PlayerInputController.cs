@@ -31,6 +31,6 @@ public class PlayerInputController : CharacterActionController
 
     public void OnAttack(InputValue value)
     {
-        Debug.Log("Fire");
+        //Debug.Log("Fire");
     }
 }
