@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : CharacterActionController
 {
     private Camera _camera;
+    
     private void Awake()
     {
         _camera = Camera.main;
@@ -19,7 +20,7 @@ public class PlayerInputController : CharacterActionController
 
     public void OnLook(InputValue value)
     {
-        Vector2 newAim = value.Get<Vector2>().normalized;
+        Vector2 newAim = value.Get<Vector2>();
         Vector2 WorldPos = _camera.ScreenToWorldPoint(newAim);
         newAim = (WorldPos - (Vector2)transform.position).normalized;
 
@@ -31,6 +32,6 @@ public class PlayerInputController : CharacterActionController
 
     public void OnAttack(InputValue value)
     {
-        //Debug.Log("Fire");
+        IsAttacking = value.isPressed;
     }
 }

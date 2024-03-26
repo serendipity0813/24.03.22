@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436217600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.84, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9237,7 +9237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462966540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.64, y: -1.52, z: 0}
+  m_LocalPosition: {x: 3, y: -1.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9398,11 +9398,13 @@ GameObject:
   m_Component:
   - component: {fileID: 839705955}
   - component: {fileID: 839705956}
+  - component: {fileID: 839705964}
   - component: {fileID: 839705958}
   - component: {fileID: 839705960}
   - component: {fileID: 839705957}
   - component: {fileID: 839705963}
-  - component: {fileID: 839705964}
+  - component: {fileID: 839705965}
+  - component: {fileID: 839705966}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9551,9 +9553,38 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.9}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &839705965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839705953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89cc6a01d0f2a874bb955471fa0a9f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponRenderer: {fileID: 462966542}
+  weaponPivot: {fileID: 1433821394}
+  characterRenderer: {fileID: 436217602}
+--- !u!114 &839705966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839705953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55bd3a7198401654e8e615576def7e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpawnPosition: {fileID: 1605205421}
+  BulletPrefab: {fileID: 0}
 --- !u!1 &1320316189
 GameObject:
   m_ObjectHideFlags: 0
@@ -9565,7 +9596,7 @@ GameObject:
   - component: {fileID: 1320316191}
   - component: {fileID: 1320316190}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9623,8 +9654,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433821393}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9643,7 +9674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605205421}
   m_Layer: 0
-  m_Name: BulletSpawnPoint
+  m_Name: BulletSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
