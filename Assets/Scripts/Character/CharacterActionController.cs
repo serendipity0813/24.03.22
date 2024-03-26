@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class CharacterActionController : MonoBehaviour
 {
+    protected CharacterStatsHandler stats { get; private set; }
+
     public event Action<Vector2> OnMoveEvent;
     public event Action<Vector2> OnLookEvent;
     public event Action OnAttackEvent;
 
-    private float _timeSinceLastAttack;
-    private float _bulletDelay = 0.2f;
+    private float _timeSinceLastAttack; 
     protected bool IsAttacking { get; set; }
+
+    protected virtual void Awake()
+    {
+        stats = GetComponent<CharacterStatsHandler>();
+    }
 
     protected virtual void Update()
     {
@@ -20,11 +26,14 @@ public class CharacterActionController : MonoBehaviour
 
     private void HandleAttackDelay()
     {
-        if(_timeSinceLastAttack <= _bulletDelay)
+        if (stats.CurrentStates.attackSO == null)
+            return;
+
+        if(_timeSinceLastAttack <= stats.CurrentStates.attackSO.delay)
         {
             _timeSinceLastAttack += Time.deltaTime;
         }
-        else if(IsAttacking && _timeSinceLastAttack > _bulletDelay)
+        else if(IsAttacking && _timeSinceLastAttack > stats.CurrentStates.attackSO.delay)
         {
             CallAttackEvent();
             _timeSinceLastAttack = 0;
