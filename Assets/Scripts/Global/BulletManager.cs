@@ -8,6 +8,7 @@ public class BulletManager : MonoBehaviour
     [SerializeField] private GameObject bullet;
 
     public static BulletManager instance;
+    private ObjectPool objectPool;
 
     private void Awake()
     {
@@ -15,9 +16,14 @@ public class BulletManager : MonoBehaviour
         instance = this; 
     }
 
+    private void Start()
+    {
+        objectPool = GetComponent<ObjectPool>();
+    }
+
     public void ShootBullet(Vector2 startPosition, Vector2 direction, RangedAttackData attackData)
     {
-        GameObject obj = Instantiate(bullet);
+        GameObject obj = objectPool.SpawnFromPool(attackData.bulletNameTag);
 
         obj.transform.position = startPosition;
         RangedAttackController attackController = obj.GetComponent<RangedAttackController>();

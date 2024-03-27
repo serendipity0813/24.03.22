@@ -9646,6 +9646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1059231697}
   - component: {fileID: 1059231698}
+  - component: {fileID: 1059231699}
   m_Layer: 0
   m_Name: BulletManager
   m_TagString: Untagged
@@ -9680,8 +9681,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b4586e9e743944395d3f9a170dbe45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactParticleSystem: {fileID: 0}
   bullet: {fileID: 1384040372531475479, guid: b2807dee36d000449bb3ac411e896bef, type: 3}
+--- !u!114 &1059231699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059231696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1beafbc932764140ad9abb3eae669ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - tag: Bullet
+    prefab: {fileID: 1384040372531475479, guid: b2807dee36d000449bb3ac411e896bef, type: 3}
+    size: 20
 --- !u!1 &1320316189
 GameObject:
   m_ObjectHideFlags: 0

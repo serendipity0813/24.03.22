@@ -22,9 +22,8 @@ MonoBehaviour:
   IsOnKnockback: 1
   KnockbackPower: 5
   KnockbackTime: 0.01
-  bulletNameTag: Blast
+  bulletNameTag: Bullet
   duration: 5
   spread: 4
   numberOfBulletPerShot: 1
   multipleBulletAngle: 7
-  BulletColor: {r: 1, g: 1, b: 1, a: 0}
