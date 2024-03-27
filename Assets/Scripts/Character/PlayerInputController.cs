@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputController : CharacterActionController
 {
     private Camera _camera;
-    
+    [SerializeField] private SpriteRenderer characterRenderer;
+
     protected override void Awake()
     {
         base.Awake();
@@ -16,6 +17,10 @@ public class PlayerInputController : CharacterActionController
     public void OnMove(InputValue value)
     {
         Vector2 moveInput = value.Get<Vector2>().normalized;
+        if(moveInput.x < 0)
+            characterRenderer.flipX = true;
+        else if(moveInput.x > 0) 
+            characterRenderer.flipX = false;
         CallMoveEvent(moveInput);
     }
 
