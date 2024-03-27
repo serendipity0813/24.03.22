@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _impactParticleSystem;
+    //[SerializeField] private ParticleSystem _impactParticleSystem;
     [SerializeField] private GameObject bullet;
 
     public static BulletManager instance;
