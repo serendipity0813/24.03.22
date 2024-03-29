@@ -9,7 +9,7 @@ public class ContactEnemyController : EnemyController
     [SerializeField] private string targetTag = "Player";
     private bool _isCollidingWithTarget;
 
-    [SerializeField]private SpriteRenderer characterRenderer;
+    [SerializeField]private SpriteRenderer[] characterRenderer;
 
     protected override void Start()
     {
@@ -34,7 +34,10 @@ public class ContactEnemyController : EnemyController
     private void Rotate(Vector2 direction)
     {
         float rotZ = Mathf.Atan2(direction.y, direction.x)*Mathf.Rad2Deg;
-        characterRenderer.flipX = Mathf.Abs(rotZ) > 90f;
+        if(Mathf.Abs(rotZ) > 90f)
+        {
+      
+        }
     }
    
 }
