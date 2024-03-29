@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager Instance;
+
+    public Transform Player { get; private set; }
+    [SerializeField] private string playerTag = "Player";
+
+    private void Awake()
     {
-        
+        Instance = this;
+        Player = GameObject.FindWithTag(playerTag).transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
