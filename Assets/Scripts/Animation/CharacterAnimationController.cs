@@ -38,7 +38,7 @@ public class CharacterAnimationController : CharacterAnimation
         animator.SetBool(IsHit, true);
     }
 
-    private void invisibillityEnd()
+    private void InvisibillityEnd()
     {
         animator.SetBool(IsHit, false);
     }
