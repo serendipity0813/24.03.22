@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7fe130d3549894499079d906514516f, type: 3}
-  m_Name: RangerAttackData
+  m_Name: MageAttackData
   m_EditorClassIdentifier: 
   size: 0.5
   delay: 1
@@ -22,7 +22,7 @@ MonoBehaviour:
   IsOnKnockback: 1
   KnockbackPower: 5
   KnockbackTime: 0.1
-  bulletNameTag: Arrow
+  bulletNameTag: Fire
   duration: 5
   spread: 8
   numberOfBulletPerShot: 1
