@@ -50,6 +50,25 @@ public class RangedAttackController : MonoBehaviour
         { 
             DestroyBullet(collision.ClosestPoint(transform.position) - _direction*0.2f, fxOnDestroy);
         }
+        else if(_attackData.target.value == (_attackData.target.value | (1 << collision.gameObject.layer)))
+        {
+            HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
+            if(healthSystem != null)
+            {
+                healthSystem.ChangeHealth(-_attackData.power);
+                if(_attackData.IsOnKnockback)
+                {
+                    CharacterMovement movement = collision.GetComponent<CharacterMovement>();
+
+                    if(movement != null)
+                    {
+                        movement.ApplyKnockback(transform, _attackData.KnockbackPower, _attackData.KnockbackTime);
+                    }
+                }
+
+            }
+            DestroyBullet(collision.ClosestPoint(transform.position) - _direction * 0.2f, fxOnDestroy);
+        }
     }
 
     public void InitializeAttack(Vector2 direction, RangedAttackData attackData, BulletManager bulletManager)

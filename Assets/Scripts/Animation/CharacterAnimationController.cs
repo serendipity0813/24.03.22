@@ -14,13 +14,19 @@ public class CharacterAnimationController : CharacterAnimation
     protected override void Awake()
     {
         base.Awake();
-        //_healthSystem = GetComponent<HealthSystem>();
+        _healthSystem = GetComponent<HealthSystem>();
     }
 
     private void Start()
     {
         controller.OnAttackEvent += Attacking;
         controller.OnMoveEvent += Move;
+
+        if(_healthSystem  != null)
+        {
+            _healthSystem.OnDamage += Hit;
+            _healthSystem.OnInvisibilityEnd += InvisibillityEnd;
+        }
     }
 
     private void Move(Vector2 obj)
