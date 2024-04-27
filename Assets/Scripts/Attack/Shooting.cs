@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    public AudioClip shootingClip;
+
     private CharacterActionController _controller;
     private BulletManager _bulletManager;
 
@@ -51,6 +53,9 @@ public class Shooting : MonoBehaviour
     private void MakeBullet(RangedAttackData rangedAttackData, float angle)
     {
         _bulletManager.ShootBullet(bulletSpawnPosition.position, RotateVector2(_aimDirection, angle), rangedAttackData);
+
+        if (shootingClip)
+            SoundManager.PlayClip(shootingClip);
     }
 
     private Vector2 RotateVector2(Vector2 v, float degree)
