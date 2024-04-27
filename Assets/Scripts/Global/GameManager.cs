@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
 
     [SerializeField] private int currentWaveIndex = 0;
+
+    [SerializeField] private CharacterStats defaultStats;
+    [SerializeField] private CharacterStats rangedStats;
+
     private int currentSpawnCount = 0;
     private int waveSpawnCount = 0;
     private int waveSpawnPosCount = 0;
@@ -50,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //UpgradeStatInit();
+        UpgradeStatInit();
         StartCoroutine("StartNextWave");
     }
 
@@ -71,7 +75,7 @@ public class GameManager : MonoBehaviour
 
                 if (currentWaveIndex % 20 == 0)
                 {
-                    //RandomUpgrade();
+                    RandomUpgrade();
                 }
 
                 if (currentWaveIndex % 10 == 0)
@@ -100,6 +104,9 @@ public class GameManager : MonoBehaviour
                         GameObject enemy = Instantiate(enemyPrefebs[prefabIdx], spawnPostions[posIdx].position, Quaternion.identity);
                         enemy.GetComponent<HealthSystem>().OnDeath += OnEnemyDeath;
 
+                        enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(defaultStats);
+                        enemy.GetComponent<CharacterStatsHandler>().AddStatModifier(rangedStats);
+
                         currentSpawnCount++;
                         yield return new WaitForSeconds(spawnInterval);
                     }
@@ -111,6 +118,52 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
     }
+
+    void UpgradeStatInit()
+    {
+        defaultStats.statsChangeType = StatsChangeType.Add;
+        defaultStats.attackSO = Instantiate(defaultStats.attackSO);
+
+        rangedStats.statsChangeType = StatsChangeType.Add;
+        rangedStats.attackSO = Instantiate(rangedStats.attackSO);
+    }
+
+    void RandomUpgrade()
+    {
+        switch (Random.Range(0, 6))
+        {
+            case 0:
+                defaultStats.maxHealth += 2;
+                break;
+
+            case 1:
+                defaultStats.attackSO.power += 1;
+                break;
+
+            case 2:
+                defaultStats.speed += 0.1f;
+                break;
+
+            case 3:
+                defaultStats.attackSO.IsOnKnockback = true;
+                defaultStats.attackSO.KnockbackPower += 1;
+                defaultStats.attackSO.KnockbackTime = 0.1f;
+                break;
+
+            case 4:
+                defaultStats.attackSO.delay -= 0.05f;
+                break;
+
+            case 5:
+                RangedAttackData rangedAttackData = rangedStats.attackSO as RangedAttackData;
+                rangedAttackData.numberOfBulletPerShot += 1;
+                break;
+
+            default:
+                break;
+        }
+    }
+
 
     void CreateReward()
     {

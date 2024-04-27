@@ -11555,11 +11555,26 @@ MonoBehaviour:
   hpGaugeSlider: {fileID: 23862866}
   gameOverUI: {fileID: 1791350187}
   currentWaveIndex: 0
+  defaultStats:
+    statsChangeType: 0
+    maxHealth: 0
+    speed: 0
+    attackSO: {fileID: 11400000, guid: 1cb49f90799db4a4b85a63239e547d8e, type: 2}
+  rangedStats:
+    statsChangeType: 0
+    maxHealth: 0
+    speed: 0
+    attackSO: {fileID: 11400000, guid: 4f3b4058994c31d42b2ff6a44ec19c7c, type: 2}
   spawnInterval: 0.5
   enemyPrefebs:
   - {fileID: 3147804874090015027, guid: 736f585df7d8fb14a81cb98b8a0df3b2, type: 3}
   - {fileID: 1818252080275842398, guid: 30d2ca4e8b5ee4447ba7aea4a4c7f934, type: 3}
   spawnPositionsRoot: {fileID: 2090496854}
+  rewards:
+  - {fileID: 1889212214821729254, guid: 94c59759e30bfa14a801f752dfe58ada, type: 3}
+  - {fileID: 6741561298269367284, guid: 770ccafbe818aaa41b09771cb5da5608, type: 3}
+  - {fileID: 5106836930585549535, guid: 4caa2e9eba10e61419825f83c5eb3686, type: 3}
+  - {fileID: 1810903095603638111, guid: a8889313660e10c4ab214cee395b8a4d, type: 3}
 --- !u!1 &1791350187
 GameObject:
   m_ObjectHideFlags: 0
